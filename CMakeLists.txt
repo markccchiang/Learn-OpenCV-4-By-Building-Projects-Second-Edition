@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(learn-opencv4)
+
+add_subdirectory(Chapter_02)
+add_subdirectory(Chapter_03)
+add_subdirectory(Chapter_04)
+add_subdirectory(Chapter_05)
+add_subdirectory(Chapter_06)
+add_subdirectory(Chapter_07)
+add_subdirectory(Chapter_08)
+add_subdirectory(Chapter_09)
+add_subdirectory(Chapter_10)
+add_subdirectory(Chapter_11)
+add_subdirectory(Chapter_12)

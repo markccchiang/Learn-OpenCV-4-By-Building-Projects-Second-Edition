@@ -31,8 +31,15 @@ TARGET_LINK_LIBRARIES( ch3_sample3 ${OpenCV_LIBS} )
 ADD_EXECUTABLE( ch3_sample4 sample4.cpp )
 TARGET_LINK_LIBRARIES( ch3_sample4 ${OpenCV_LIBS} )
 
-ADD_EXECUTABLE( ch3_sample5 sample5.cpp )
-TARGET_LINK_LIBRARIES( ch3_sample5 ${OpenCV_LIBS} -lglut -lGL -lGLU)
+find_package(OpenGL REQUIRED)
+find_package(GLUT REQUIRED)
 
-ADD_EXECUTABLE( ch3_sample6 sample6.cpp )
-TARGET_LINK_LIBRARIES( ch3_sample6 ${OpenCV_LIBS} )
+include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS})
+include_directories(/usr/local/Cellar/glfw/3.3.1/include)
+include_directories(/usr/local/Cellar/glm/0.9.9.5/include)
+
+ADD_EXECUTABLE( ch3_sample5 sample5.cpp )
+TARGET_LINK_LIBRARIES( ch3_sample5 ${OpenCV_LIBS} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
+
+#ADD_EXECUTABLE( ch3_sample6 sample6.cpp )
+#TARGET_LINK_LIBRARIES( ch3_sample6 ${OpenCV_LIBS} )
